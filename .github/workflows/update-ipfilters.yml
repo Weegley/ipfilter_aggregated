@@ -14,8 +14,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Download Files
       run: |
-        curl https://github.com/DavidMoore/ipfilter/releases/download/lists/ipfilter.zip --output ./ipfilter.app.zip
-        curl http://upd.emule-security.org/ipfilter.zip --output ./emule-security.zip
+        curl -L https://github.com/DavidMoore/ipfilter/releases/download/lists/ipfilter.zip --output ./ipfilter.app.zip
+        curl -L http://upd.emule-security.org/ipfilter.zip --output ./emule-security.zip
       working-directory: ${{ github.workspace }}
     - name: Commit and Push Changes
       run: |
