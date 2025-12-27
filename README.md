@@ -1,14 +1,11 @@
 # ipfilter_aggregated
 
-This repository is a simple copy (mirror) of files taken from their respective websites. It aggregates files for convenience and does not modify the original content. If you need the authoritative or latest versions, please consult the original websites that host these files.
+This repository is a simple copy (mirror) of files taken from [Emule-Security](https://www.emule-security.org/) and [ipfilter.app](https://www.ipfilter.app/). It aggregates files for convenience and does not modify the original content. If you need the authoritative or latest versions, please consult the original websites that host these files.
 
 ## Files
 
-- emule-security.zip — direct download: https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/emule-security.zip
-  - Browse on GitHub: https://github.com/Weegley/ipfilter_aggregated/blob/main/emule-security.zip
-
-- ipfilter.app.zip — direct download: https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/ipfilter.app.zip
-  - Browse on GitHub: https://github.com/Weegley/ipfilter_aggregated/blob/main/ipfilter.app.zip
+- emule-security.zip — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/emule-security.zip)
+- ipfilter.app.zip — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/ipfilter.app.zip)
 
 ## Download examples
 
