@@ -20,7 +20,3 @@ wget -O ipfilter.app.zip "https://raw.githubusercontent.com/Weegley/ipfilter_agg
 ## Disclaimer
 
 This repository is provided "as-is" for archival and convenience purposes. The repository owner does not claim ownership of the original content. Verify files and licensing with the original sources before use.
-
-## Contact
-
-Repository owner: https://github.com/Weegley
