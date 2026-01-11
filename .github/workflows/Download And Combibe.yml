@@ -1,0 +1,41 @@
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *' # at 06:00
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Pre-requisites
+      run: |
+        sudo apt-get install -y iprange
+        
+    - name: Download and combine
+      run: |
+        curl -L https://github.com/DavidMoore/ipfilter/releases/download/lists/ipfilter.zip --output ipfilter.app.zip
+        gunzip -c ipfilter.app.zip | awk -F " " '{print $1"-"$3}' | sed -r 's/00([0-9])/\1/g; s/0([1-9][0-9])/\1/g' > ipfilter.tmp
+        curl -L http://upd.emule-security.org/ipfilter.zip --output emule-security.zip
+        gunzip -c emule-security.zip | awk -F " " '{print $1"-"$3}' | sed -r 's/00([0-9])/\1/g; s/0([1-9][0-9])/\1/g' >> ipfilter.tmp
+
+        iprange -j --print-suffix ",000," ipfilter.tmp > ipfilter_aggregated.dat
+        zip -9 ipfilter_aggregated.zip ipfilter_aggregated.dat   
+      working-directory: ${{ github.workspace }}
+      
+    - name: Commit and Push updated lists
+      run: |
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+        git add ipfilter_aggregated.zip
+        git add ipfilter.app.zip
+        git add emule-security.zip
+        git add ipfilter_aggregated.dat
+        git commit -m 'Update ipfilter files'
+        git push
+        
