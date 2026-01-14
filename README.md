@@ -4,8 +4,13 @@ This repository is a simple copy (mirror) of files taken from [Emule-Security](h
 
 ## Files
 
-- emule-security.zip — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/emule-security.zip)
-- ipfilter.app.zip — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/ipfilter.app.zip)
+Original
+
+- emule-security.zip (original) — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/emule-security.zip)
+- ipfilter.app.zip (original) — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/main/ipfilter.app.zip)
+
+Aggregated, LAN ip's excepted
+
 - ipfilter_aggregated.zip — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/refs/heads/main/ipfilter_aggregated.zip)
 - ipfilter_aggregated.dat — [Direct link](https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/refs/heads/main/ipfilter_aggregated.dat)
 ## Disclaimer
