@@ -22,8 +22,9 @@ jobs:
         gunzip -c ipfilter.app.zip | awk -F " " '{print $1"-"$3}' | sed -r 's/00([0-9])/\1/g; s/0([1-9][0-9])/\1/g' > ipfilter.tmp
         curl -L http://upd.emule-security.org/ipfilter.zip --output emule-security.zip
         gunzip -c emule-security.zip | awk -F " " '{print $1"-"$3}' | sed -r 's/00([0-9])/\1/g; s/0([1-9][0-9])/\1/g' >> ipfilter.tmp
+        wget https://raw.githubusercontent.com/Weegley/ipfilter_aggregated/refs/heads/main/exceptions
 
-        iprange -j --print-suffix ",000," ipfilter.tmp | sed -r 's/^|\.|-/&00/g; s/0*([0-9]{3})/\1/g' > ipfilter_aggregated.dat
+        iprange -j --print-suffix ",000," ipfilter.tmp --except exceptions | sed -r 's/^|\.|-/&00/g; s/0*([0-9]{3})/\1/g' > ipfilter_aggregated.dat
         zip -9 ipfilter_aggregated.zip ipfilter_aggregated.dat   
       working-directory: ${{ github.workspace }}
       
